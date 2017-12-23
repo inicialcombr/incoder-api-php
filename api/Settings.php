@@ -23,6 +23,6 @@ class Settings
 		// Absolute path of files that will be accessed by editor //
 		////////////////////////////////////////////////////////////
 
-		return dirname(__FILE__).'/../../';
+		return dirname(__FILE__).'/';
 	}
 }
