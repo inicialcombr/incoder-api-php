@@ -20,7 +20,7 @@ class Navigator
 	 */
 	public function __construct()
 	{
-		$this->__basePath = Settings::getBasePath();
+		$this->__basePath = Settings::$basePath;
 	}
 
 	/**

@@ -1,5 +1,10 @@
 <?php
 /**
+ * @see Settings
+ */
+require_once 'Settings.php';
+
+/**
  * @see Request
  */
 require_once 'Request.php';
@@ -24,6 +29,27 @@ class App
 	 */
 	public function __construct()
 	{
+		if (Settings::$authProtected) {
+
+			try {
+
+				$authUser = @$_SERVER['PHP_AUTH_USER'];
+				$authPass = @$_SERVER['PHP_AUTH_PW'];
+				$authPass = $authPass ? md5($authPass) : $authPass;
+
+				if (!($authUser == Settings::$authUser && $authPass  == Settings::$authPass)) {
+					throw new Exception("Error Processing Request", 1);
+				}
+
+			} catch (Exception $e) {
+
+				header('WWW-Authenticate: Basic realm="inCoder"');
+			    header('HTTP/1.0 401 Unauthorized');
+			    echo 'You must be logged in!';
+			    exit;
+			}
+		}
+
 		$this->__setRouteUri();
 	}
 
@@ -32,13 +58,13 @@ class App
 	 */
 	private function __setRouteUri()
 	{
-		// SERVER ///////////////////////////////////////////////
+		// SERVER
 
 		$phpSelf     = $_SERVER['PHP_SELF'];
 		$queryString = $_SERVER['QUERY_STRING'];
 		$requestUri  = $_SERVER['REQUEST_URI'];
 
-		// BASE URI /////////////////////////////////////////////
+		// BASE URI
 
 		$phpSelf     = $_SERVER['PHP_SELF'];
 		$phpSelfData = explode('/', $phpSelf);
@@ -46,7 +72,7 @@ class App
 
 		$baseUri = str_replace($phpFileName, '', $phpSelf);
 
-		// ROUTE URI ////////////////////////////////////////////
+		// ROUTE URI
 
 		$this->__routeUri = '/'.str_replace(array($baseUri, $queryString,'?'), '', $requestUri);
 	}
