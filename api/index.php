@@ -23,7 +23,7 @@ $app->route('/navigator', function($request, $response) {
 			throw new Exception('Path is required!');
 		}
 
-		$data = Navigator::list($path);
+		$data = Navigator::readPath($path);
 
 		$response->setData($data);
 		$response->setMessage('Success!');
@@ -53,6 +53,10 @@ $app->route('/editor', function($request, $response) {
 		if (!$path) {
 			throw new Exception('Path is required!');
 		}
+
+		// if (!empty($content)) {
+		// 	throw new Exception('Disabled!');
+		// }
 
 		$data = Editor::file($path, $content);
 

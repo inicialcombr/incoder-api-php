@@ -22,7 +22,7 @@ class Settings
 	 * Encrypted with MD5
 	 * @var string
 	 */
-	public static $authPass = '8a5da52ed126447d359e70c05721a8aa'; // Default md5('api')
+	public static $authPass = '8a5da52ed126447d359e70c05721a8aa'; // Default: api
 
 	/**
 	 * Absolute File Base Path

@@ -65,7 +65,7 @@ class Navigator
 	 * @param  string $path
 	 * @return array
 	 */
-	public static function list($path = null)
+	public static function readPath($path = null)
 	{
 		$navigator = new Navigator();
 

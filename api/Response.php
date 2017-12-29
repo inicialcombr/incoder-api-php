@@ -73,7 +73,6 @@ class Response
 	 */
 	public function send()
 	{
-		header('Access-Control-Allow-Origin: *');
 		header('Content-Type: application/json');
 
 		print json_encode(array(
