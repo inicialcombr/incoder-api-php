@@ -43,15 +43,18 @@ class App
 				$authPass = $authPass ? md5($authPass) : $authPass;
 
 				if (!($authUser == Settings::$authUser && $authPass  == Settings::$authPass)) {
-					throw new Exception("Error Processing Request", 1);
+					throw new Exception("Incorrect username or password!");
 				}
 
 			} catch (Exception $e) {
 
 				header('WWW-Authenticate: Basic realm="inCoder"');
 			    header('HTTP/1.0 401 Unauthorized');
-			    echo 'You must be logged in!';
-			    exit;
+
+			    $response = new Response();
+			    $response->setStatus(false);
+				$response->setMessage($e->getMessage());
+				$response->send();
 			}
 		}
 

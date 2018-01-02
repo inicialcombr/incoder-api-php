@@ -9,7 +9,7 @@ class Settings
 	 * API Auth Protection
 	 * @var boolean
 	 */
-	public static $authProtected = false;
+	public static $authProtected = true;
 
 	/**
 	 * API Auth User
