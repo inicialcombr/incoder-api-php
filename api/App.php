@@ -29,10 +29,7 @@ class App
 	 */
 	public function __construct()
 	{
-		header('Content-Type: application/json');
 		header('Access-Control-Allow-Origin: *');
-		// header('Access-Control-Allow-Credentials: true');
-		// header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 
 		if (Settings::$authProtected) {
 

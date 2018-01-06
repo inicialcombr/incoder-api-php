@@ -26,7 +26,7 @@ class Request
 	private $__method;
 
 	/**
-	 * @return Api\Request
+	 * @return Request
 	 */
 	public function __construct()
 	{

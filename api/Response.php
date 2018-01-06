@@ -23,7 +23,7 @@ class Response
 	/**
 	 * @param mixed   $data
 	 * @param boolean $status
-	 * @return Api\Response
+	 * @return Response
 	 */
 	public function __construct($data = null, $status = true, $message = null)
 	{
@@ -36,7 +36,7 @@ class Response
 
 	/**
 	 * @param mixed $data
-	 * @return Api\Response
+	 * @return Response
 	 */
 	public function setData($data)
 	{
@@ -47,7 +47,7 @@ class Response
 
 	/**
 	 * @param bool $status
-	 * @return Api\Response
+	 * @return Response
 	 */
 	public function setStatus($status)
 	{
@@ -58,7 +58,7 @@ class Response
 
 	/**
 	 * @param string $message
-	 * @return Api\Response
+	 * @return Response
 	 */
 	public function setMessage($message)
 	{
