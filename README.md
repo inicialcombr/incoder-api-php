@@ -6,8 +6,12 @@ The idea is to provide a simple way to develop or change web site and applicatio
 
 ## Screenshot
 
-![Screenshot](screenshot.JPG)
+![Screenshot](screenshots/editor.JPG)
 
 ## Demo
 
 [http://www.inicial.com.br/incoder/](http://www.inicial.com.br/incoder/)
+
+## About inCoder
+
+[https://github.com/inicialcombr/incoder](https://github.com/inicialcombr/incoder)
