@@ -16,4 +16,4 @@ The idea is to provide a simple way to develop or change web site and applicatio
 
 ## About inCoder
 
-[https://github.com/inicialcombr/incoder](https://github.com/inicialcombr/incoder)
+[https://github.com/inicialsolucoes/incoder](https://github.com/inicialsolucoes/incoder)
